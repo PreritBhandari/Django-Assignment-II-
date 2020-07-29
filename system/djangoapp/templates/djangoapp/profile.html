@@ -1,0 +1,11 @@
+{% extends 'djangoapp/base.html'%}
+
+{% block content %}
+<form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+
+    <a href="{% url 'crudhome' %}"><h3>Goto Crud Page </h3></a>
+
+    <button>Log out</button>
+</form>
+{% endblock %}

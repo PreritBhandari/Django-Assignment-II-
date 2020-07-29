@@ -1,0 +1,20 @@
+{% extends 'djangoapp/base.html' %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <button>Register</button>
+
+</form>
+<br>
+<div>
+    <small class="text">
+        Already have an Account?
+        <a class="ml-2" href="#">Log In</a>
+    </small>
+</div>
+
+{% endblock %}

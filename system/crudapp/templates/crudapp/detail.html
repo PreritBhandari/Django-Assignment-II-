@@ -1,0 +1,59 @@
+{% extends 'djangoapp/base.html' %}
+
+{% block content %}
+
+
+<div class="content-section">
+    <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div class="media-body">
+            <h2 class="account-heading">{{ user.first_name }} {{ user.last_name }}</h2>
+            <p style="color:yellow;">{{ user.username }}</p>
+        </div>
+    </div>
+    <!-- FORM HERE -->
+    <form>
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">
+                Detail Page
+            </legend>
+
+            <table style="margin:2px;width:100%;">
+                <tr>
+                    <th>Nick Name</th>
+                    <th>Address</th>
+                    <th>Telephone No</th>
+                    <th>Date Of Birth</th>
+                </tr>
+
+                <tr>
+
+                    <td> {{ data.Nickname}}</td>
+
+                    <td> {{ data.address }}</td>
+
+                    <td>{{ data.telephone_no }}</td>
+
+                    <td>{{ data.dob }}</td>
+
+                </tr>
+
+            </table>
+            <br>
+
+        </fieldset>
+    </form>
+</div>
+
+<br>
+<p>
+    <a href="{% url 'create-profile' %}">Create</a> &nbsp;&nbsp;
+    <a href="update.html">Update</a>&nbsp;&nbsp;
+    <a href="delete.html">Delete</a>&nbsp;&nbsp;
+
+
+</p>
+
+
+{% endblock %}

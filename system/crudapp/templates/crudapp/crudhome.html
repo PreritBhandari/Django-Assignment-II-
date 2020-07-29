@@ -1,0 +1,24 @@
+{% extends 'djangoapp/base.html' %}
+
+{% block content %}
+
+
+This is the crud home .<p><br>Welcome <h4>{{user.first_name}}&nbsp {{user.last_name}} </h4>
+You are viewing crud home as {{user.username}}
+
+<p>
+
+<h5 style="color:pink;">To view the blog please click the <strong>BLOG</strong> in the navbar.</h5>
+<h5 style="color:pink;">To add more details to your profile please click the <strong>PROFILE</strong> in the navbar.
+</h5>
+<br>
+<p>
+
+    <a href="{% url 'profile-create' %}">Create Profile</a>&nbsp;&nbsp;
+
+
+    <a href="{% url 'profile' %}">Open Profile</a>&nbsp;&nbsp;
+    
+
+</p>
+{% endblock %}

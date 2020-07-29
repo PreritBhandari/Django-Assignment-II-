@@ -1,0 +1,26 @@
+{% extends 'djangoapp/base.html' %}
+
+{% block content %}
+
+
+<h3>Create Profile</h3>
+<br>
+<strong style="color:yellow;"> Full Name: {{ user.first_name }}&nbsp; {{ user.last_name }}
+    <br><br>
+
+    Email: {{ user.username }}
+    <br>
+    <br>
+</strong>
+<form method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit"> Create</button>
+
+</form>
+
+
+
+{% endblock %}
